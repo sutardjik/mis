@@ -46,7 +46,7 @@ namespace test
             }
             else
             {
-                MessageBox.Show("Select a column modify.", "FAILED TO SELECT AN COLUMN");
+                MessageBox.Show("Select a column modify.", "FAILED TO SELECT A COLUMN");
             }
         }
     }

@@ -46,7 +46,7 @@ namespace test
             }
             else
             {
-                MessageBox.Show("Select a table to delete data from.", "FAILED TO SELECT AN TABLE");
+                MessageBox.Show("Select a table to delete data from.", "FAILED TO SELECT A TABLE");
             }
         }
     }

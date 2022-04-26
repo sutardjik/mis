@@ -65,7 +65,7 @@ namespace test
             }
             else
             {
-                MessageBox.Show("Select a table to modify.", "FAILED TO SELECT AN TABLE");
+                MessageBox.Show("Select a table to modify.", "FAILED TO SELECT A TABLE");
             }
         }
     }

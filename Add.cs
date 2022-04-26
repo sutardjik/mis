@@ -69,7 +69,7 @@ namespace test
             }
             else
             {
-                MessageBox.Show("Select a table to add data to.", "FAILED TO SELECT AN TABLE");
+                MessageBox.Show("Select a table to add data to.", "FAILED TO SELECT A TABLE");
             }
         }
         //temp location
