@@ -9,43 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace test
-{
-    public partial class ModifyCourseID : Form
-    {
-        public ModifyCourseID()
-        {
+namespace test{
+    public partial class ModifyCourseID : Form{
+        public ModifyCourseID(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void ModifyCourseID_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'masterDataSet.CourseInfo' table. You can move, or remove it, as needed.
+        private void ModifyCourseID_Load(object sender, EventArgs e){
             this.courseInfoTableAdapter.Fill(this.masterDataSet.CourseInfo);
-            // TODO: This line of code loads data into the 'masterDataSet.ChooseCourse' table. You can move, or remove it, as needed.
-            //this.chooseCourseTableAdapter.Fill(this.masterDataSet.ChooseCourse);
             modvalue.SelectedIndex = -1;
         }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             ModifyCourseChoosing mcc = new ModifyCourseChoosing();
             mcc.Show();
         }
-
-        private void save_Click(object sender, EventArgs e)
-        {
+        private void save_Click(object sender, EventArgs e){
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
-            if (stuIDTextBox.Text == "" || modvalue.Text == "")
-            {
+            if (stuIDTextBox.Text == "" || modvalue.Text == ""){
                 MessageBox.Show("All fields must be filled.", "EMPTY TEXT FIELD(S)");
-            }
-            else
-            {
+            }else{
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql = "UPDATE ChooseCourse SET CourseID='" + modvalue.Text + "' WHERE StuID='" + stuIDTextBox.Text + "'";
                 adapter.UpdateCommand = connection.CreateCommand();

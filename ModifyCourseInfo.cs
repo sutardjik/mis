@@ -9,60 +9,40 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace test
-{
-    public partial class ModifyCourseInfo : Form
-    {
-        public ModifyCourseInfo()
-        {
+namespace test{
+    public partial class ModifyCourseInfo : Form{
+        public ModifyCourseInfo(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void ModifyCourseInfo_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void ModifyCourseInfo_Load(object sender, EventArgs e){}
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             Modify m = new Modify();
             m.Show();
         }
-
-        private void save_Click(object sender, EventArgs e)
-        {
-            if (coursename.Checked == true)
-            {
+        private void save_Click(object sender, EventArgs e){
+            if (coursename.Checked == true){
                 this.Hide();
                 ModifyCourseName mcn = new ModifyCourseName();
                 mcn.Show();
-            } else if (coursegrade.Checked == true)
-            {
+            }else if (coursegrade.Checked == true){
                 this.Hide();
                 ModifyCourseGrade mg = new ModifyCourseGrade();
                 mg.Show();
-            }
-            else if (credit.Checked == true)
-            {
+            }else if (credit.Checked == true){
                 this.Hide();
                 ModifyCredit mc = new ModifyCredit();
                 mc.Show();
-            }
-            else if (cancelyear.Checked == true)
-            {
+            }else if (cancelyear.Checked == true){
                 this.Hide();
                 ModifyCancelYear mcy = new ModifyCancelYear();
                 mcy.Show();
-            } else if (teacherid.Checked == true)
-            {
+            }else if (teacherid.Checked == true){
                 this.Hide();
                 ModifyTeacherID mt = new ModifyTeacherID();
                 mt.Show();
-            }
-            else
-            {
+            }else{
                 MessageBox.Show("Select a column to modify.", "FAILED TO SELECT A COLUMN");
             }
         }

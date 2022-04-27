@@ -9,34 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace test
-{
-    public partial class ModifyCourseName : Form
-    {
-        public ModifyCourseName()
-        {
+namespace test{
+    public partial class ModifyCourseName : Form{
+        public ModifyCourseName(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             ModifyCourseInfo mti = new ModifyCourseInfo();
             mti.Show();
         }
-
-        private void save_Click(object sender, EventArgs e)
-        {
+        private void save_Click(object sender, EventArgs e){
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
-            if (courseIDTextBox.Text == "" || modvalue.Text == "")
-            {
+            if (courseIDTextBox.Text == "" || modvalue.Text == ""){
                 MessageBox.Show("All fields must be filled.", "EMPTY TEXT FIELD(S)");
-            }
-            else
-            {
+            }else{
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql = "UPDATE CourseInfo SET CourseName='" + modvalue.Text + "' WHERE CourseID='" + courseIDTextBox.Text + "'";
                 adapter.UpdateCommand = connection.CreateCommand();
@@ -45,14 +35,9 @@ namespace test
                 MessageBox.Show("CourseName updated.", "TABLE VALUE UPDATED");
             }
         }
-
-        private void ModifyCourseName_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'masterDataSet.TeacherInfo' table. You can move, or remove it, as needed.
+        private void ModifyCourseName_Load(object sender, EventArgs e){
             this.teacherInfoTableAdapter.Fill(this.masterDataSet.TeacherInfo);
-            // TODO: This line of code loads data into the 'masterDataSet.TeacherInfo' table. You can move, or remove it, as needed.
             this.teacherInfoTableAdapter.Fill(this.masterDataSet.TeacherInfo);
-            // TODO: This line of code loads data into the 'masterDataSet.CourseInfo' table. You can move, or remove it, as needed.
             this.courseInfoTableAdapter.Fill(this.masterDataSet.CourseInfo);
             modvalue.SelectedIndex = -1;
         }

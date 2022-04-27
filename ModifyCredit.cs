@@ -9,34 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace test
-{
-    public partial class ModifyCredit : Form
-    {
-        public ModifyCredit()
-        {
+namespace test{
+    public partial class ModifyCredit : Form{
+        public ModifyCredit(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             ModifyCourseInfo mti = new ModifyCourseInfo();
             mti.Show();
         }
-
-        private void save_Click(object sender, EventArgs e)
-        {
+        private void save_Click(object sender, EventArgs e){
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
-            if (courseIDTextBox.Text == "" || modvalue.Text == "")
-            {
+            if (courseIDTextBox.Text == "" || modvalue.Text == ""){
                 MessageBox.Show("All fields must be filled.", "EMPTY TEXT FIELD(S)");
-            }
-            else
-            {
+            }else{
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql = "UPDATE CourseInfo SET Credit='" + modvalue.Text + "' WHERE CourseID='" + courseIDTextBox.Text + "'";
                 adapter.UpdateCommand = connection.CreateCommand();

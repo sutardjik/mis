@@ -9,39 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace test
-{
-    public partial class ModifyTeacherName : Form
-    {
-        public ModifyTeacherName()
-        {
+namespace test{
+    public partial class ModifyTeacherName : Form{
+        public ModifyTeacherName(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void ModifyTeacherName_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void ModifyTeacherName_Load(object sender, EventArgs e){}
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             ModifyTeacherInfo mti = new ModifyTeacherInfo();
             mti.Show();
         }
-
-        private void save_Click(object sender, EventArgs e)
-        {
+        private void save_Click(object sender, EventArgs e){
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
-            if (teacherIDTextBox.Text == "" || modifyvalue.Text == "")
-            {
+            if (teacherIDTextBox.Text == "" || modifyvalue.Text == ""){
                 MessageBox.Show("All fields must be filled.", "EMPTY TEXT FIELD(S)");
-            }
-            else
-            {
+            }else{
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql = "UPDATE TeacherInfo SET TeacherName='" + modifyvalue.Text + "' WHERE TeacherID='" + teacherIDTextBox.Text + "'";
                 adapter.UpdateCommand = connection.CreateCommand();

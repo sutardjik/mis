@@ -9,33 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace test
-{
-    public partial class TeacherInterface : Form
-    {
-        public TeacherInterface()
-        {
+namespace test{
+    public partial class TeacherInterface : Form{
+        public TeacherInterface(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void TeacherInterface_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'masterDataSet.ChooseCourse' table. You can move, or remove it, as needed.
-            //this.chooseCourseTableAdapter.Fill(this.masterDataSet.ChooseCourse);
-            // TODO: This line of code loads data into the 'masterDataSet.StudentInfo' table. You can move, or remove it, as needed.
-            //this.studentInfoTableAdapter.Fill(this.masterDataSet.StudentInfo);
-        }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void TeacherInterface_Load(object sender, EventArgs e){}
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             LoginInterface login = new LoginInterface();
             login.Show();
         }
-
-        private void personalinfo_Click(object sender, EventArgs e)
-        {
+        private void personalinfo_Click(object sender, EventArgs e){
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
@@ -44,9 +30,7 @@ namespace test
             sda.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
         }
-
-        private void score_Click(object sender, EventArgs e)
-        {
+        private void score_Click(object sender, EventArgs e){
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
@@ -55,9 +39,7 @@ namespace test
             sda.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
         }
-
-        private void avgscore_Click(object sender, EventArgs e)
-        {
+        private void avgscore_Click(object sender, EventArgs e){
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
@@ -66,9 +48,7 @@ namespace test
             sda.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0].DefaultView;
         }
-
-        private void modifyscore_Click(object sender, EventArgs e)
-        {
+        private void modifyscore_Click(object sender, EventArgs e){
             this.Hide();
             ModifyScore ms = new ModifyScore();
             ms.Show();

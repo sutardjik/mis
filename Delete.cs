@@ -8,44 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace test
-{
-    public partial class Delete : Form
-    {
-        public Delete()
-        {
+namespace test{
+    public partial class Delete : Form{
+        public Delete(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             AdminInterface admin = new AdminInterface();
             admin.Show();
         }
-
-        private void save_Click(object sender, EventArgs e)
-        {
-            if (student.Checked == true)
-            {
+        private void save_Click(object sender, EventArgs e){
+            if (student.Checked == true){
                 this.Hide();
                 DeleteStudent ds = new DeleteStudent();
                 ds.Show();
-            }else if(course.Checked == true)
-            {
+            }else if(course.Checked == true){
                 this.Hide();
                 DeleteCourse dc = new DeleteCourse();
                 dc.Show();
-            }
-            else if(choosecourse.Checked == true)
-            {
+            }else if(choosecourse.Checked == true){
                 this.Hide();
                 DeleteCourseChoosing dcc = new DeleteCourseChoosing();
                 dcc.Show();
-            }
-            else
-            {
+            }else{
                 MessageBox.Show("Select a table to delete data from.", "FAILED TO SELECT A TABLE");
             }
         }

@@ -9,49 +9,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace test
-{
-    public partial class DeleteStudent : Form
-    {
-        public DeleteStudent()
-        {
+namespace test{
+    public partial class DeleteStudent : Form{
+        public DeleteStudent(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void studentInfoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
+        private void studentInfoBindingNavigatorSaveItem_Click(object sender, EventArgs e){
             this.Validate();
             this.studentInfoBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.masterDataSet);
-
         }
-
-        private void DeleteStudent_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'masterDataSet.StudentInfo' table. You can move, or remove it, as needed.
+        private void DeleteStudent_Load(object sender, EventArgs e){
             this.studentInfoTableAdapter.Fill(this.masterDataSet.StudentInfo);
             stuIDTextBox.Clear();
         }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             Delete d = new Delete();
             d.Show();
         }
-
-        private void save_Click(object sender, EventArgs e)
-        {
+        private void save_Click(object sender, EventArgs e){
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
-            if (stuIDTextBox.Text == "")
-            {
+            if (stuIDTextBox.Text == ""){
                 MessageBox.Show("The text field must be filled.", "EMPTY TEXT FIELD");
-            }
-            else
-            {
+            }else{
                 SqlCommand cmd = new SqlCommand(@"DELETE FROM [ChooseCourse] WHERE StuID='" + stuIDTextBox.Text + "'", connection);
                 cmd.ExecuteNonQuery();
                 SqlCommand cmd1 = new SqlCommand(@"DELETE FROM [StudentInfo] WHERE StuID='" + stuIDTextBox.Text + "'", connection);

@@ -9,41 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace test
-{
-    public partial class ModifyStuClass : Form
-    {
-        public ModifyStuClass()
-        {
+namespace test{
+    public partial class ModifyStuClass : Form{
+        public ModifyStuClass(){
             InitializeComponent();
             this.CenterToScreen();
         }
-
-        private void ModifyStuClass_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'masterDataSet.StudentInfo' table. You can move, or remove it, as needed.
-            this.studentInfoTableAdapter.Fill(this.masterDataSet.StudentInfo);
-
-        }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
+        private void ModifyStuClass_Load(object sender, EventArgs e){this.studentInfoTableAdapter.Fill(this.masterDataSet.StudentInfo);}
+        private void exit_Click(object sender, EventArgs e){
             this.Hide();
             ModifyStudentInfo mis = new ModifyStudentInfo();
             mis.Show();
         }
-
-        private void save_Click(object sender, EventArgs e)
-        { 
+        private void save_Click(object sender, EventArgs e){ 
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
-            if (stuIDTextBox.Text == "" || modvalue.Text == "")
-            {
+            if (stuIDTextBox.Text == "" || modvalue.Text == ""){
                 MessageBox.Show("All fields must be filled.", "EMPTY TEXT FIELD(S)");
-            }
-            else
-            {
+            }else{
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql = "UPDATE StudentInfo SET Class='" + modvalue.Text + "' WHERE StuID='" + stuIDTextBox.Text + "'";
                 adapter.UpdateCommand = connection.CreateCommand();
