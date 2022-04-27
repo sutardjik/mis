@@ -1,2 +1,11 @@
 # mis
-database for scut cs mis with microsoft sql server 2019 + visual studio 2022 c# windows forms
+SCUT CS MIS created with MSSQL Server Management Studio & Visual Studio C# Windows Forms using CRUD operations
+
+Tables: 
+* StudentInfo
+* TeacherInfo
+* CourseInfo
+* ChooseCourse
+* StudentAuthority
+* TeacherAuthority
+* AdminAuthority
