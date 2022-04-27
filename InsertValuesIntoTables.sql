@@ -42,7 +42,7 @@ VALUES
 
 INSERT INTO AdminAuthority 
 VALUES 
-	('00000', 'admin')
+	('00000', 'ADMIN')
 
 SELECT * FROM StudentInfo
 SELECT * FROM TeacherInfo

@@ -1,11 +1,11 @@
 CREATE TABLE StudentInfo(
 	StuID VARCHAR(10) UNIQUE NOT NULL,
 	StuName VARCHAR(10) NOT NULL,
-	Sex VARCHAR(6) CHECK (Sex='Male' OR SEX='Female') NOT NULL,
+	Sex VARCHAR(6) CHECK (Sex = 'Male' OR Sex = 'Female') NOT NULL,
 	EntAge INT CHECK (EntAge >= 10 AND EntAge <= 50) NOT NULL,
 	EntYear INT CHECK (EntYear >= 2018 AND EntYear <= 2022) NOT NULL,
 	StuGrade INT CHECK (StuGrade >= 1 AND StuGrade <= 4) NOT NULL,
-	Class VARCHAR(20) CHECK (Class='International' OR Class='Excellent Engineer' OR Class='Innovation') NOT NULL
+	Class VARCHAR(20) CHECK (Class = 'International' OR Class = 'Excellent Engineer' OR Class = 'Innovation') NOT NULL
 	PRIMARY KEY (StuID)
 )
 
