@@ -1,0 +1,1 @@
+window.repositoryObject = {"object_id":"d10","name":"master@LAPTOP-DCOJKS07\\MSSQLSERVER01","description":null,"summary":[{"field":"DBMS","value":"SQL Server"}],"modules":[],"dbObjects":[{"count":7,"id":"d10t","name":"Tables"}],"show_schema":false};
