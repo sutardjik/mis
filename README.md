@@ -1,7 +1,7 @@
 # mis
-SCUT CS MIS created with MSSQL Server Management Studio & Visual Studio C# Windows Forms using CRUD operations
+School MIS created with MSSQL Server Management Studio & Visual Studio C# Windows Forms using CRUD operations
 
-Tables: 
+Tables:
 * StudentInfo
 * TeacherInfo
 * CourseInfo
