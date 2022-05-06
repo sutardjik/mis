@@ -1,3 +1,5 @@
+use master
+
 CREATE TABLE StudentInfo(
 	StuID VARCHAR(10) UNIQUE NOT NULL,
 	StuName VARCHAR(10) NOT NULL,

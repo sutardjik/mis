@@ -1,3 +1,5 @@
+use master
+
 INSERT INTO StudentInfo 
 VALUES
 	('0000000001', 'Becky', 'Female', 19, 2020, 2, 'International'),
