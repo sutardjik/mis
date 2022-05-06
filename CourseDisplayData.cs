@@ -24,12 +24,12 @@ namespace test{
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
             if (cid.Text==""){
-                SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [master].[dbo].[ChooseCourse]", connection);
+                SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [master].[dbo].[ChooseCourse] ORDER BY StuID", connection);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView1.DataSource = dt;
             }else{
-                SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [master].[dbo].[ChooseCourse] WHERE CourseID='" + cid.Text + "'", connection);
+                SqlDataAdapter sda = new SqlDataAdapter(@"SELECT * FROM [master].[dbo].[ChooseCourse] WHERE CourseID='" + cid.Text + "' ORDER BY StuID", connection);
                 DataSet ds = new DataSet();
                 sda.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0].DefaultView;

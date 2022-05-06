@@ -81,7 +81,7 @@
             this.chooseclass.Name = "chooseclass";
             this.chooseclass.Size = new System.Drawing.Size(140, 66);
             this.chooseclass.TabIndex = 11;
-            this.chooseclass.Text = "CHOOSE CLASS";
+            this.chooseclass.Text = "CHOOSE COURSE";
             this.chooseclass.UseVisualStyleBackColor = true;
             this.chooseclass.Click += new System.EventHandler(this.chooseclass_Click);
             // 

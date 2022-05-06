@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label coursename;
             System.Windows.Forms.Label stuIDLabel;
+            System.Windows.Forms.Label label1;
             this.modvalue = new System.Windows.Forms.ComboBox();
             this.chooseCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.masterDataSet = new test.masterDataSet();
@@ -40,8 +41,10 @@
             this.stuIDTextBox = new System.Windows.Forms.TextBox();
             this.chooseCourseTableAdapter = new test.masterDataSetTableAdapters.ChooseCourseTableAdapter();
             this.courseInfoTableAdapter = new test.masterDataSetTableAdapters.CourseInfoTableAdapter();
+            this.teacherIDTextBox = new System.Windows.Forms.TextBox();
             coursename = new System.Windows.Forms.Label();
             stuIDLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chooseCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseInfoBindingSource)).BeginInit();
@@ -50,7 +53,7 @@
             // coursename
             // 
             coursename.AutoSize = true;
-            coursename.Location = new System.Drawing.Point(54, 71);
+            coursename.Location = new System.Drawing.Point(54, 81);
             coursename.Name = "coursename";
             coursename.Size = new System.Drawing.Size(97, 13);
             coursename.TabIndex = 57;
@@ -72,7 +75,7 @@
             this.modvalue.DisplayMember = "CourseID";
             this.modvalue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.modvalue.FormattingEnabled = true;
-            this.modvalue.Location = new System.Drawing.Point(164, 68);
+            this.modvalue.Location = new System.Drawing.Point(164, 78);
             this.modvalue.MaximumSize = new System.Drawing.Size(127, 0);
             this.modvalue.MinimumSize = new System.Drawing.Size(127, 0);
             this.modvalue.Name = "modvalue";
@@ -131,11 +134,29 @@
             // 
             this.courseInfoTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(87, 55);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(64, 13);
+            label1.TabIndex = 71;
+            label1.Text = "Teacher ID:";
+            // 
+            // teacherIDTextBox
+            // 
+            this.teacherIDTextBox.Location = new System.Drawing.Point(164, 52);
+            this.teacherIDTextBox.Name = "teacherIDTextBox";
+            this.teacherIDTextBox.Size = new System.Drawing.Size(127, 20);
+            this.teacherIDTextBox.TabIndex = 72;
+            // 
             // ModifyCourseID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 211);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.teacherIDTextBox);
             this.Controls.Add(this.modvalue);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.save);
@@ -167,5 +188,6 @@
         private masterDataSetTableAdapters.ChooseCourseTableAdapter chooseCourseTableAdapter;
         private System.Windows.Forms.BindingSource courseInfoBindingSource;
         private masterDataSetTableAdapters.CourseInfoTableAdapter courseInfoTableAdapter;
+        private System.Windows.Forms.TextBox teacherIDTextBox;
     }
 }

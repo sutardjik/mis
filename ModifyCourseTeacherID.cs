@@ -24,11 +24,11 @@ namespace test{
             string conn = @"Data Source=LAPTOP-DCOJKS07\MSSQLSERVER01;Initial Catalog=master;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
-            if (stuIDTextBox.Text == "" || modvalue.Text == ""){
+            if (stuIDTextBox.Text == "" || modvalue.Text == "" || courseIDTextBox.Text==""){
                 MessageBox.Show("All fields must be filled.", "EMPTY TEXT FIELD(S)");
             }else{
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                String sql = "UPDATE ChooseCourse SET TeacherID='" + modvalue.Text + "' WHERE StuID='" + stuIDTextBox.Text + "'";
+                String sql = "UPDATE ChooseCourse SET TeacherID='" + modvalue.Text + "' WHERE StuID='" + stuIDTextBox.Text + "' AND CourseID='"+courseIDTextBox.Text+"'";
                 adapter.UpdateCommand = connection.CreateCommand();
                 adapter.UpdateCommand.CommandText = sql;
                 adapter.UpdateCommand.ExecuteNonQuery();
