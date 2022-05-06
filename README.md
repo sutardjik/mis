@@ -31,3 +31,7 @@ Written in C# using Visual Studio Windows Forms for UI and SQL for database crea
 * Modify a record's column value — StudentInfo / TeacherInfo / CourseInfo / ChooseCourse
 * Delete an item — student / course / course choice
 * Add a new record into a table — StudentInfo / TeacherInfo / CourseInfo / ChooseCourse
+--------------------
+#### Database design documents (DatabaseDesignDoc subfolder)
+* index.html or index.local.html — open in preferred web browser
+* DatabaseModelDiagram.pdf
