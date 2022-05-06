@@ -49,7 +49,7 @@ VALUES
 SELECT * FROM StudentInfo
 SELECT * FROM TeacherInfo
 SELECT * FROM CourseInfo
-SELECT * FROM ChooseCourse
+SELECT * FROM ChooseCourse ORDER BY StuID
 SELECT * FROM StudentAuthority
 SELECT * FROM TeacherAuthority
 SELECT * FROM AdminAuthority
