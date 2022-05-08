@@ -35,3 +35,7 @@ Written in C# using Visual Studio Windows Forms for UI and SQL for database crea
 #### Database design documents (DatabaseDesignDoc subfolder)
 * index.html or index.local.html — open in preferred web browser
 * DatabaseModelDiagram.pdf
+--------------------
+#### Files for initial database tables and values (InitialSQLQueries subfolder)
+* CreateTables.sql
+* InsertValuesIntoTables.sql
