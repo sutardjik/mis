@@ -33,7 +33,11 @@ namespace test{
                 adapter.UpdateCommand = connection.CreateCommand();
                 adapter.UpdateCommand.CommandText = sql;
                 adapter.UpdateCommand.ExecuteNonQuery();
-                MessageBox.Show("TeacherName updated.", "TABLE VALUE UPDATED");
+                String sql1 = "UPDATE TeacherAuthority SET TeacherPassword='" + modifyvalue.Text + "' WHERE TeacherID='" + teacherIDTextBox.Text + "'";
+                adapter.UpdateCommand = connection.CreateCommand();
+                adapter.UpdateCommand.CommandText = sql1;
+                adapter.UpdateCommand.ExecuteNonQuery();
+                MessageBox.Show("TeacherName updated in TeacherInfo table and TeacherPassword updated in TeacherAuthority table.", "TABLES' VALUE UPDATED");
             }
         }
     }

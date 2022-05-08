@@ -30,7 +30,7 @@ namespace test{
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
             if (cid.Text == "" || tid.Text==""){
-                MessageBox.Show("The text fields must be filled.", "EMPTY TEXT FIELD");
+                MessageBox.Show("The text fields must be filled.", "EMPTY TEXT FIELD(S)");
             }else{
                 SqlCommand cmd = new SqlCommand(@"INSERT INTO [dbo].[ChooseCourse]([StuID],[CourseID],[TeacherID],[ChosenYear],[Score]) VALUES ('" + LoginInterface.strtxt1 + "','" + cid.Text + "','" + tid.Text + "',2022,NULL)", connection);
                 cmd.ExecuteNonQuery();

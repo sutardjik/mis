@@ -20,7 +20,7 @@ namespace test{
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
             if (name.Text == "" && id.Text == ""){
-                MessageBox.Show("Student's Name or ID can't be empty.", "EMPTY TEXT FIELDS");
+                MessageBox.Show("Student's Name or ID can't be empty.", "EMPTY TEXT FIELD(S)");
             }else if (name.Text == ""){
                 SqlDataAdapter sda = new SqlDataAdapter("SELECT StuID, AVG(CH.Score) 'AvgScore' FROM ChooseCourse CH WHERE StuID='" + id.Text + "' GROUP BY StuID" , connection);
                 DataSet ds = new DataSet();
@@ -61,7 +61,7 @@ namespace test{
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
             if (name.Text == "" && id.Text == ""){
-                MessageBox.Show("Course's Name or ID can't be empty.", "EMPTY TEXT FIELDS");
+                MessageBox.Show("Course's Name or ID can't be empty.", "EMPTY TEXT FIELD(S)");
             }else if(id.Text == ""){
                 SqlDataAdapter sda = new SqlDataAdapter("SELECT C.CourseName, AVG(CH.Score) 'AvgScore' FROM CourseInfo C, ChooseCourse CH WHERE CourseName='" + name.Text + "' AND C.CourseID=CH.CourseID GROUP BY C.CourseName", connection);
                 DataSet ds = new DataSet();

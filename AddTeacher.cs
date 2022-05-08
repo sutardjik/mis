@@ -40,8 +40,10 @@ namespace test{
             }else{
                 SqlCommand cmd = new SqlCommand(@"INSERT INTO [dbo].[TeacherInfo]([TeacherID],[TeacherName],[TeachCourse]) VALUES ('" + teacherIDTextBox.Text + "','" + teacherNameTextBox.Text + "','" + teachCourseTextBox.Text + "')", connection);
                 cmd.ExecuteNonQuery();
+                SqlCommand cmd1 = new SqlCommand(@"INSERT INTO [dbo].[TeacherAuthority]([TeacherID],[TeacherPassword]) VALUES ('" + teacherIDTextBox.Text + "','" + teacherNameTextBox.Text + "')", connection);
+                cmd1.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show("Added to TeacherInfo table.", "ROW ADDED TO TABLE");
+                MessageBox.Show("Added to TeacherInfo and TeacherAuthority tables.", "ROW ADDED TO TABLES");
             }
         }
     }

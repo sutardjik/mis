@@ -36,8 +36,10 @@ namespace test{
             }else{
                 SqlCommand cmd = new SqlCommand(@"INSERT INTO [dbo].[StudentInfo]([StuID],[StuName],[Sex],[EntAge],[EntYear],[StuGrade],[Class]) VALUES ('"+stuIDTextBox.Text+"','"+stuNameTextBox.Text+"','"+sex.Text+"','"+entage.Text+"','"+entyear.Text+"','"+stugrade.Text+"','"+stuclass.Text+"')",connection);
                 cmd.ExecuteNonQuery();
+                SqlCommand cmd1 = new SqlCommand(@"INSERT INTO [dbo].[StudentAuthority]([StuID],[StuPassword]) VALUES ('" + stuIDTextBox.Text + "','" + stuNameTextBox.Text + "')", connection);
+                cmd1.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show("Added to StudentInfo table.", "ROW ADDED TO TABLE");
+                MessageBox.Show("Added to StudentInfo and StudentAuthority tables.", "ROW ADDED TO TABLES");
             }
         }
         private void exit_Click_1(object sender, EventArgs e){
