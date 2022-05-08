@@ -5,7 +5,7 @@ VALUES
 	('0000000001', 'Becky', 'Female', 19, 2019, 3, 'International'),
 	('0000000002', 'Chad', 'Male', 20, 2019, 3, 'Excellent Engineer'),
 	('0000000003', 'Richard', 'Male', 17, 2018, 4, 'Innovation'),
-	('0000000004', 'Jess', 'Female', 19, 2018, 4, 'International')
+	('0000000004', 'Jess', 'Female', 18, 2018, 4, 'International')
 
 INSERT INTO TeacherInfo 
 VALUES 
