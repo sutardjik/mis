@@ -38,7 +38,7 @@ namespace test{
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
             if (courseIDTextBox.Text == "" || courseNameTextBox.Text == "" || teacherid.Text=="" || credit.Text=="" || coursegrade.Text == ""){
-                MessageBox.Show("All text fields must be filled. If there is no CancelYear, its field can be left blank or NULL.", "EMPTY TEXT FIELD(S)");
+                MessageBox.Show("Course ID and/or Course Name and/or Teacher ID and/or Credit and/or Course Grade text fields must be filled. If there is no Cancel Year, its field can be left blank or NULL.", "EMPTY TEXT FIELD(S)");
             }else{
                 if(cancelYearTextBox.Text=="" || cancelYearTextBox.Text == "NULL" || cancelYearTextBox.Text=="null"){
                     SqlCommand cmd = new SqlCommand(@"INSERT INTO [dbo].[CourseInfo]([CourseID],[CourseName],[TeacherID],[Credit],[CourseGrade],[CancelYear]) VALUES ('" + courseIDTextBox.Text + "','" + courseNameTextBox.Text + "','" + teacherid.Text + "','" + credit.Text + "','" + coursegrade.Text + "',NULL)", connection);

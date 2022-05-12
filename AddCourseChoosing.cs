@@ -41,7 +41,7 @@ namespace test{
             SqlConnection connection = new SqlConnection(conn);
             connection.Open();
             if (stuid.Text == "" || cid.Text == "" || tid.Text == "" || chosenyear.Text == ""){
-                MessageBox.Show("Stu ID and/or Course ID and/or Teacher ID and/or ChosenYear text fields must be filled. If there is no Score, its field can be left blank or NULL.", "EMPTY TEXT FIELD(S)");
+                MessageBox.Show("Stu ID and/or Course ID and/or Teacher ID and/or Chosen Year text fields must be filled. If there is no Score, its field can be left blank or NULL.", "EMPTY TEXT FIELD(S)");
             }else{   
                 if(scoreTextBox.Text=="" || scoreTextBox.Text == "NULL" || scoreTextBox.Text == "null"){
                     SqlCommand cmd = new SqlCommand(@"INSERT INTO [dbo].[ChooseCourse]([StuID],[CourseID],[TeacherID],[ChosenYear],[Score]) VALUES ('" + stuid.Text + "','" + cid.Text + "','" + tid.Text + "','" + chosenyear.Text + "',NULL)", connection);
