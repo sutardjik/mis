@@ -35,7 +35,7 @@ namespace test{
                 SqlCommand cmd = new SqlCommand(@"INSERT INTO [dbo].[ChooseCourse]([StuID],[CourseID],[TeacherID],[ChosenYear],[Score]) VALUES ('" + LoginInterface.strtxt1 + "','" + cid.Text + "','" + tid.Text + "',2022,NULL)", connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show("Added to ChooseCourse table.", "ROW ADDED TO TABLE");
+                MessageBox.Show("Successfully enrolled in course. Course choice added to ChooseCourse table.", "ROW ADDED TO TABLE");
             }
         }
         private void exit_Click(object sender, EventArgs e){
