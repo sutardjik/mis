@@ -27,10 +27,8 @@ namespace test{
             if (courseIDTextBox.Text == ""){
                 MessageBox.Show("The text field must be filled.", "EMPTY TEXT FIELD");
             }else{
-                SqlCommand cmd = new SqlCommand(@"DELETE FROM [ChooseCourse] WHERE CourseID='" + courseIDTextBox.Text + "'", connection);
+                SqlCommand cmd = new SqlCommand(@"IF EXISTS (SELECT * FROM ChooseCourse WHERE ChooseCourse.CourseID='" + courseIDTextBox.Text + "') DELETE CourseInfo WHERE CourseInfo.CourseID='" + courseIDTextBox.Text + "' ELSE DELETE CourseInfo WHERE CourseInfo.CourseID='" + courseIDTextBox.Text + "'",connection);
                 cmd.ExecuteNonQuery();
-                SqlCommand cmd1 = new SqlCommand(@"DELETE FROM [CourseInfo] WHERE CourseID='" + courseIDTextBox.Text + "'", connection);
-                cmd1.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Deleted row from ChooseCourse and CourseInfo tables.", "ROW DELETED FROM TABLES");
             }

@@ -28,7 +28,7 @@ namespace test{
                 MessageBox.Show("Course ID text field must be filled. If there is no CancelYear, its field can be left blank or NULL.", "EMPTY TEXT FIELD(S)");
             }else{
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                if (modifyvalue.Text == "" || modifyvalue.Text=="NULL"){
+                if (modifyvalue.Text == "" || modifyvalue.Text=="NULL"||modifyvalue.Text=="null"){
                     String sql = "UPDATE CourseInfo SET CancelYear=NULL WHERE CourseID='" + courseIDTextBox.Text + "'";
                     adapter.UpdateCommand = connection.CreateCommand();
                     adapter.UpdateCommand.CommandText = sql;

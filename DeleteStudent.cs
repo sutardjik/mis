@@ -36,12 +36,15 @@ namespace test{
             if (stuIDTextBox.Text == ""){
                 MessageBox.Show("The text field must be filled.", "EMPTY TEXT FIELD");
             }else{
-                SqlCommand cmd = new SqlCommand(@"DELETE FROM [ChooseCourse] WHERE StuID='" + stuIDTextBox.Text + "'", connection);
+                SqlCommand cmd = new SqlCommand(@"IF EXISTS (SELECT * FROM ChooseCourse WHERE ChooseCourse.StuID='"
+                + stuIDTextBox.Text + "') IF EXISTS (SELECT * FROM StudentAuthority WHERE StudentAuthority.StuID='" 
+                + stuIDTextBox.Text + "') DELETE StudentInfo WHERE StudentInfo.StuID='" 
+                + stuIDTextBox.Text + "' IF EXISTS (SELECT * FROM StudentAuthority WHERE StudentAuthority.StuID='"
+                + stuIDTextBox.Text + "') DELETE StudentInfo WHERE StudentInfo.StuID='"
+                + stuIDTextBox.Text + "' IF EXISTS (SELECT * FROM ChooseCourse WHERE ChooseCourse.StuID='"
+                + stuIDTextBox.Text + "') DELETE StudentInfo WHERE StudentInfo.StuID='"
+                + stuIDTextBox.Text + "'", connection);
                 cmd.ExecuteNonQuery();
-                SqlCommand cmd1 = new SqlCommand(@"DELETE FROM [StudentInfo] WHERE StuID='" + stuIDTextBox.Text + "'", connection);
-                cmd1.ExecuteNonQuery();
-                SqlCommand cmd2 = new SqlCommand(@"DELETE FROM [StudentAuthority] WHERE StuID='" + stuIDTextBox.Text + "'", connection);
-                cmd2.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Deleted row from ChooseCourse, StudentInfo, and StudentAuthority tables.", "ROW DELETED FROM TABLES");
             }
